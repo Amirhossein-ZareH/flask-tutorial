@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <title> main page</title>
+</head>
+
+<body>
+    {% if age >= 18 %}
+        <h1>welcome to main page {{ name }}</h1>
+        <br>
+        <a href={{ url_for("login")}}>Login</a>
+        <br>
+        <a href={{ url_for("register")}}>register</a>
+        <br>
+        <a href={{ url_for("burgera")}}>burgera</a>
+        <br>
+        <a href={{ url_for("hello")}}>hello</a>
+    {% else %}
+        
+    {% for name in names %}
+        <h1 style= color:red;>come back later brosky {{name}}</h1>
+    {% endfor %}
+            
+    {% endif %}
+
+
+    <h2>form get</h2>
+    <form action="/data" method="get"> {{url_for('data')}}
+        <input type="text" name="username" placeholder="Enter your username">
+        <input type="password" name="password" placeholder="Enter your password">
+        <input type="submit" value="Login">
+    </form>
+
+    <hr>
+
+    <h2>form post</h2>
+    <form action="/login" method="post"> {{url_for('login')}}
+        <input type="text" name="username" placeholder="Enter your username">
+        <input type="password" name="password" placeholder="Enter your password">
+        <input type="submit" value="Login">
+    </form>
+</body>
+
+</html>
