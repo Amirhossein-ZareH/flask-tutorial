@@ -19,11 +19,9 @@
         <br>
         <a href={{ url_for("hello")}}>hello</a>
     {% else %}
-        
     {% for name in names %}
-        <h1 style= color:red;>come back later brosky {{name}}</h1>
+        <h1 style= color:red;>come back later{{name}}</h1>
     {% endfor %}
-            
     {% endif %}
 
 
