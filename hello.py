@@ -7,7 +7,7 @@ app = Flask(__name__,template_for="templates") #(template_folder)
 def main():
     age = 18
     names = ["amir" , "honey" , "arshia" , "elham"]
-    return render_template("main.html", name = "sana" , age = age , names = names) 
+    return render_template("main.html", age = age , names = names) 
             
 @app.route("/burgera")
 def burgera():
@@ -24,7 +24,7 @@ def hello():
 def login():
     return "welcome to login page"
 
-@app.route("/register", methods=["POST"])
+@app.route("/register", methods=["POST", "GET"])
 def register():
         if request.method == "POST":
             return "this is POST web page"
